@@ -21,16 +21,6 @@ A PhpStorm plugin for iCalendar and vCard syntax highlighting and templates.
 
 ![vCard syntax highlighting](screenshots/card.png)
 
-## Building
-
-Requires JDK 25. The plugin targets PhpStorm 2026.3 (IntelliJ Platform build 263).
-
-1. Clone this repository
-2. Open the project in IntelliJ IDEA
-3. Run `./gradlew buildPlugin`
-
-The plugin will be built in `build/distributions/`.
-
 ## Installation
 
 Install [iCal Highlighter from JetBrains Marketplace](https://plugins.jetbrains.com/plugin/36089-ical-highlighter).
@@ -106,6 +96,16 @@ For a contact, use `Content-Type: text/vcard` and type `vcard` in the body. Cont
 
 The HTTP Client integration is optional; standalone calendar and vCard support also works without that plugin.
 
+## Building
+
+Requires JDK 25. The plugin targets PhpStorm 2026.3 (IntelliJ Platform build 263).
+
+1. Clone this repository
+2. Open the project in IntelliJ IDEA
+3. Run `./gradlew buildPlugin`
+
+The plugin will be built in `build/distributions/`.
+
 ## Development
 
 To run the plugin in a development instance:
@@ -127,25 +127,6 @@ To check binary compatibility with PhpStorm 2026.3:
 ```bash
 ./gradlew verifyPlugin
 ```
-
-## Preparing a Marketplace release
-
-Put the signing certificate in `key/chain.crt`, the encrypted private key in
-`key/private_encrypted.pem`, and its password in `key/pwd`. The `key/` directory
-is ignored by Git.
-
-Run `./publish.sh` to build, sign, and verify the release. The script finds JDK 25
-in `JAVA_HOME`, a macOS JDK installation, or a local PhpStorm/IntelliJ IDEA installation.
-You can pass Gradle options, for example:
-
-```bash
-./publish.sh -PlocalPlatformPath="/path/to/PhpStorm.app/Contents"
-```
-
-Upload `build/distributions/icalhighlighter-1.0.0-signed.zip` manually for the first
-Marketplace release. The script only prepares the archive; it does not upload it.
-For later automated uploads, `PUBLISH_TOKEN` must contain a separate Marketplace
-access token, not a signing key.
 
 ## License
 
