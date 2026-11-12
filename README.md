@@ -33,6 +33,10 @@ The plugin will be built in `build/distributions/`.
 
 ## Installation
 
+Install [iCal Highlighter from JetBrains Marketplace](https://plugins.jetbrains.com/plugin/36089-ical-highlighter).
+
+### Install from disk
+
 1. In PhpStorm, go to Settings/Preferences → Plugins
 2. Click the gear icon and select "Install Plugin from Disk..."
 3. Navigate to the built plugin zip file and select it
