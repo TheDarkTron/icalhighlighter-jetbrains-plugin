@@ -1,0 +1,14 @@
+# Gradle, Kotlin, and IntelliJ Platform build output
+.gradle/
+.kotlin/
+.intellijPlatform/
+build/
+out/
+
+# Local IDE settings
+.idea/
+*.iml
+
+# Operating system files
+.DS_Store
+Thumbs.db

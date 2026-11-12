@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+    <id>com.github.icalhighlighter</id>
+    <name>iCal Highlighter</name>
+    <vendor>Your Name</vendor>
+    <description><![CDATA[
+        Provides syntax highlighting support for iCal (.ics) files.
+        Features:
+        <ul>
+            <li>Syntax highlighting for iCal files</li>
+            <li>Support for iCal properties and components</li>
+            <li>Color configuration for different iCal elements</li>
+        </ul>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType
+                name="iCal File"
+                implementationClass="com.github.icalhighlighter.ICalFileType"
+                fieldName="INSTANCE"
+                language="iCal"
+                extensions="ics"/>
+        <lang.syntaxHighlighterFactory
+                language="iCal"
+                implementationClass="com.github.icalhighlighter.ICalSyntaxHighlighterFactory"/>
+    </extensions>
+</idea-plugin> 
