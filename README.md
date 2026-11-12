@@ -11,6 +11,16 @@ A PhpStorm plugin for iCalendar and vCard syntax highlighting and templates.
 - Configurable colors under **Settings → Editor → Color Scheme → iCal / vCard**
 - Two file templates and ten live templates, restricted to the corresponding file type or HTTP request content type
 
+## Screenshots
+
+### iCalendar highlighting
+
+![iCalendar syntax highlighting](screenshots/cal.png)
+
+### vCard highlighting
+
+![vCard syntax highlighting](screenshots/card.png)
+
 ## Building
 
 Requires JDK 25. The plugin targets PhpStorm 2026.3 (IntelliJ Platform build 263).
