@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.github.icalhighlighter"
-version = "1.0-SNAPSHOT"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
@@ -34,6 +34,16 @@ dependencies {
 
 kotlin {
     jvmToolchain(25)
+}
+
+tasks.jar {
+    from("LICENSE") {
+        into("META-INF")
+    }
+}
+
+tasks.named("verifyPluginSignature") {
+    dependsOn("signPlugin")
 }
 
 intellijPlatform {

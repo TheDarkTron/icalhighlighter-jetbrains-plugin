@@ -114,6 +114,25 @@ To check binary compatibility with PhpStorm 2026.3:
 ./gradlew verifyPlugin
 ```
 
+## Preparing a Marketplace release
+
+Put the signing certificate in `key/chain.crt`, the encrypted private key in
+`key/private_encrypted.pem`, and its password in `key/pwd`. The `key/` directory
+is ignored by Git.
+
+Run `./publish.sh` to build, sign, and verify the release. The script finds JDK 25
+in `JAVA_HOME`, a macOS JDK installation, or a local PhpStorm/IntelliJ IDEA installation.
+You can pass Gradle options, for example:
+
+```bash
+./publish.sh -PlocalPlatformPath="/path/to/PhpStorm.app/Contents"
+```
+
+Upload `build/distributions/icalhighlighter-1.0.0-signed.zip` manually for the first
+Marketplace release. The script only prepares the archive; it does not upload it.
+For later automated uploads, `PUBLISH_TOKEN` must contain a separate Marketplace
+access token, not a signing key.
+
 ## License
 
-This project is licensed under the MIT License.
+Copyright (c) 2026 Rene Kudlek. This project is licensed under the [MIT License](LICENSE).

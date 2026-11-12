@@ -12,3 +12,5 @@ out/
 # Operating system files
 .DS_Store
 Thumbs.db
+
+/key/

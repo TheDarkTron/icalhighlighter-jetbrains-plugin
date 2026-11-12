@@ -2,7 +2,7 @@
 <idea-plugin>
     <id>com.github.icalhighlighter</id>
     <name>iCal Highlighter</name>
-    <vendor>Your Name</vendor>
+    <vendor>Rene Kudlek</vendor>
     <description><![CDATA[
         Provides syntax highlighting and templates for iCalendar and vCard files.
         Features:
@@ -13,6 +13,20 @@
             <li>Color configuration for different iCal elements</li>
         </ul>
     ]]></description>
+    <change-notes><![CDATA[
+        <p><b>1.0.0 — BEGIN:ADVENTURE</b></p>
+        <p>Your calendar files have places to be. Now they can get dressed for the occasion.</p>
+        <ul>
+            <li>Syntax highlighting for iCalendar and vCard files: properties, parameters, values,
+                and BEGIN/END markers finally stop wearing the same outfit.</li>
+            <li>File templates and ten live templates for events, contacts, alarms, and more.
+                Fewer keystrokes between you and your next meeting. Sorry about the meeting.</li>
+            <li>Configurable colors, because your calendar may be full, but your palette has room.</li>
+            <li>Optional HTTP Client integration brings matching live templates to text/calendar
+                and text/vcard request bodies. Your contacts can now travel in style.</li>
+        </ul>
+        <p>No meetings were shortened in the making of this plugin.</p>
+    ]]></change-notes>
 
     <depends>com.intellij.modules.platform</depends>
     <depends optional="true" config-file="http-client.xml">com.jetbrains.restClient</depends>
