@@ -1,3 +1,5 @@
+import org.jetbrains.intellij.platform.gradle.TestFrameworkType
+
 plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "2.4.21"
@@ -15,6 +17,7 @@ repositories {
 }
 
 dependencies {
+    testImplementation("junit:junit:4.13.2")
     intellijPlatform {
         val localPlatformPath = providers.gradleProperty("localPlatformPath")
         if (localPlatformPath.isPresent) {
@@ -24,6 +27,8 @@ dependencies {
         }
         pluginVerifier()
         zipSigner()
+        bundledPlugin("com.jetbrains.restClient")
+        testFramework(TestFrameworkType.Platform)
     }
 }
 

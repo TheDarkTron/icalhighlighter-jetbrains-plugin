@@ -4,16 +4,18 @@
     <name>iCal Highlighter</name>
     <vendor>Your Name</vendor>
     <description><![CDATA[
-        Provides syntax highlighting support for iCal (.ics) files.
+        Provides syntax highlighting and templates for iCalendar and vCard files.
         Features:
         <ul>
             <li>Syntax highlighting for iCal files</li>
-            <li>Support for iCal properties and components</li>
+            <li>Distinct colors for properties, parameters, values, and BEGIN/END keywords</li>
+            <li>File templates and live templates for calendar and contact components</li>
             <li>Color configuration for different iCal elements</li>
         </ul>
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends optional="true" config-file="http-client.xml">com.jetbrains.restClient</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <fileType
@@ -21,9 +23,23 @@
                 implementationClass="com.github.icalhighlighter.ICalFileType"
                 fieldName="INSTANCE"
                 language="iCal"
-                extensions="ics"/>
+                extensions="ics;ical;ifb"/>
+        <fileType
+                name="vCard File"
+                implementationClass="com.github.icalhighlighter.VCardFileType"
+                fieldName="INSTANCE"
+                language="vCard"
+                extensions="vcf;vcard"/>
         <lang.syntaxHighlighterFactory
                 language="iCal"
                 implementationClass="com.github.icalhighlighter.ICalSyntaxHighlighterFactory"/>
+        <lang.syntaxHighlighterFactory
+                language="vCard"
+                implementationClass="com.github.icalhighlighter.ICalSyntaxHighlighterFactory"/>
+        <colorSettings implementation="com.github.icalhighlighter.ICalColorSettingsPage" displayName="iCal / vCard"/>
+        <liveTemplateContext contextId="ICAL" implementation="com.github.icalhighlighter.ICalTemplateContextType"/>
+        <liveTemplateContext contextId="VCARD" implementation="com.github.icalhighlighter.VCardTemplateContextType"/>
+        <defaultLiveTemplates file="/liveTemplates/iCalendar.xml"/>
+        <defaultLiveTemplates file="/liveTemplates/vCard.xml"/>
     </extensions>
-</idea-plugin> 
+</idea-plugin>

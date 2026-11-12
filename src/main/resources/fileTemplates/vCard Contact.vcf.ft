@@ -1,0 +1,8 @@
+BEGIN:VCARD
+VERSION:4.0
+FN:Alex Example
+N:Example;Alex;;;
+EMAIL;TYPE=work:alex@example.com
+TEL;VALUE=uri;TYPE=work,voice:tel:+49-555-0100
+ADR;TYPE=work:;;Example Street 1;Berlin;;10115;Germany
+END:VCARD

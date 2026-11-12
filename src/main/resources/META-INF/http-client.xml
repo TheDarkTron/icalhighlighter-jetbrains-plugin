@@ -1,0 +1,8 @@
+<idea-plugin>
+    <extensions defaultExtensionNs="com.intellij">
+        <liveTemplateContext contextId="ICAL_HTTP" baseContextId="ICAL"
+                             implementation="com.github.icalhighlighter.HttpCalendarTemplateContextType"/>
+        <liveTemplateContext contextId="VCARD_HTTP" baseContextId="VCARD"
+                             implementation="com.github.icalhighlighter.HttpVCardTemplateContextType"/>
+    </extensions>
+</idea-plugin>

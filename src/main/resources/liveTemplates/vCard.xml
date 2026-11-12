@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<templateSet group="vCard">
+  <template name="vcard" value="BEGIN:VCARD&#10;VERSION:4.0&#10;FN:Alex Example&#10;N:Example;Alex;;;&#10;EMAIL;TYPE=work:alex@example.com&#10;TEL;VALUE=uri;TYPE=work,voice:tel:+49-555-0100&#10;ADR;TYPE=work:;;Example Street 1;Berlin;;10115;Germany&#10;END:VCARD&#10;$END$" description="vCard contact" toReformat="false" toShortenFQNames="false">
+    <context>
+      <option name="VCARD" value="true" />
+    </context>
+  </template>
+</templateSet>

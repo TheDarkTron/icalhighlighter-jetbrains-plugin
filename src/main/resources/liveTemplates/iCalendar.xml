@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<templateSet group="iCalendar">
+  <template name="icalcalendar" value="BEGIN:VCALENDAR&#10;VERSION:2.0&#10;PRODID:-//iCal Highlighter//Demo Calendar//EN&#10;CALSCALE:GREGORIAN&#10;BEGIN:VEVENT&#10;UID:$UID$&#10;DTSTAMP:20261112T090000Z&#10;DTSTART:20261112T100000Z&#10;DTEND:20261112T110000Z&#10;SUMMARY:Demo meeting&#10;ATTENDEE;CN=&quot;Alex Example&quot;;ROLE=REQ-PARTICIPANT:mailto:alex@example.com&#10;DESCRIPTION:Discuss the next steps.&#10;END:VEVENT&#10;END:VCALENDAR&#10;$END$" description="Calendar with a demo event" toReformat="false" toShortenFQNames="false">
+    <variable name="UID" expression="" defaultValue="&quot;demo@example.com&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="ICAL" value="true" />
+    </context>
+  </template>
+  <template name="icalevent" value="BEGIN:VEVENT&#10;UID:$UID$&#10;DTSTAMP:20261112T090000Z&#10;DTSTART:20261112T100000Z&#10;DTEND:20261112T110000Z&#10;SUMMARY:Demo meeting&#10;ATTENDEE;CN=&quot;Alex Example&quot;;ROLE=REQ-PARTICIPANT:mailto:alex@example.com&#10;DESCRIPTION:Discuss the next steps.&#10;END:VEVENT&#10;$END$" description="Event component" toReformat="false" toShortenFQNames="false">
+    <variable name="UID" expression="" defaultValue="&quot;demo@example.com&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="ICAL" value="true" />
+    </context>
+  </template>
+  <template name="icaltodo" value="BEGIN:VTODO&#10;UID:$UID$&#10;DTSTAMP:20261112T090000Z&#10;DUE:20261113T170000Z&#10;SUMMARY:Demo task&#10;STATUS:NEEDS-ACTION&#10;PRIORITY:5&#10;PERCENT-COMPLETE:0&#10;END:VTODO&#10;$END$" description="Todo component" toReformat="false" toShortenFQNames="false">
+    <variable name="UID" expression="" defaultValue="&quot;demo@example.com&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="ICAL" value="true" />
+    </context>
+  </template>
+  <template name="icaljournal" value="BEGIN:VJOURNAL&#10;UID:$UID$&#10;DTSTAMP:20261112T090000Z&#10;DTSTART;VALUE=DATE:20261112&#10;SUMMARY:Demo journal entry&#10;DESCRIPTION:Notes from today.&#10;END:VJOURNAL&#10;$END$" description="Journal component" toReformat="false" toShortenFQNames="false">
+    <variable name="UID" expression="" defaultValue="&quot;demo@example.com&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="ICAL" value="true" />
+    </context>
+  </template>
+  <template name="icaltimezone" value="BEGIN:VTIMEZONE&#10;TZID:Europe/Berlin&#10;BEGIN:STANDARD&#10;DTSTART:19701025T030000&#10;TZOFFSETFROM:+0200&#10;TZOFFSETTO:+0100&#10;TZNAME:CET&#10;RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU&#10;END:STANDARD&#10;BEGIN:DAYLIGHT&#10;DTSTART:19700329T020000&#10;TZOFFSETFROM:+0100&#10;TZOFFSETTO:+0200&#10;TZNAME:CEST&#10;RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU&#10;END:DAYLIGHT&#10;END:VTIMEZONE&#10;$END$" description="Timezone with standard and daylight rules" toReformat="false" toShortenFQNames="false">
+    <context>
+      <option name="ICAL" value="true" />
+    </context>
+  </template>
+  <template name="icalfreebusy" value="BEGIN:VFREEBUSY&#10;UID:$UID$&#10;DTSTAMP:20261112T090000Z&#10;DTSTART:20261112T000000Z&#10;DTEND:20261113T000000Z&#10;ORGANIZER:mailto:alex@example.com&#10;FREEBUSY;FBTYPE=BUSY:20261112T100000Z/20261112T110000Z&#10;END:VFREEBUSY&#10;$END$" description="Free/busy component" toReformat="false" toShortenFQNames="false">
+    <variable name="UID" expression="" defaultValue="&quot;demo@example.com&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="ICAL" value="true" />
+    </context>
+  </template>
+  <template name="icalalarm" value="BEGIN:VALARM&#10;ACTION:DISPLAY&#10;TRIGGER:-PT15M&#10;DESCRIPTION:Meeting starts in 15 minutes.&#10;END:VALARM&#10;$END$" description="Display alarm (inside an event or todo)" toReformat="false" toShortenFQNames="false">
+    <context>
+      <option name="ICAL" value="true" />
+    </context>
+  </template>
+  <template name="icalstandard" value="BEGIN:STANDARD&#10;DTSTART:19701025T030000&#10;TZOFFSETFROM:+0200&#10;TZOFFSETTO:+0100&#10;TZNAME:CET&#10;RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU&#10;END:STANDARD&#10;$END$" description="Standard time observance (inside a timezone)" toReformat="false" toShortenFQNames="false">
+    <context>
+      <option name="ICAL" value="true" />
+    </context>
+  </template>
+  <template name="icaldaylight" value="BEGIN:DAYLIGHT&#10;DTSTART:19700329T020000&#10;TZOFFSETFROM:+0100&#10;TZOFFSETTO:+0200&#10;TZNAME:CEST&#10;RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU&#10;END:DAYLIGHT&#10;$END$" description="Daylight time observance (inside a timezone)" toReformat="false" toShortenFQNames="false">
+    <context>
+      <option name="ICAL" value="true" />
+    </context>
+  </template>
+</templateSet>
